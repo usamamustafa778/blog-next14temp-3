@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Instagram, Search, Twitter } from "lucide-react";
 
-export default function Navbar() {
+export default function Navbar({ logo }) {
   return (
     <FullContainer className="bg-white shadow py-3 sticky top-0 z-10">
       <div className="flex items-center justify-between w-10/12">
@@ -12,7 +12,7 @@ export default function Navbar() {
           <Image
             height={50}
             width={180}
-            src="https://cheerup2.theme-sphere.com/bold/wp-content/uploads/sites/8/2017/07/logo-2-1.png"
+            src={logo}
             alt="logo"
             className="w-40 md:w-auto"
           />

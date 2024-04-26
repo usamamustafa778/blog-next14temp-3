@@ -6,6 +6,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "cheerup2.theme-sphere.com",
       },
+      {
+        protocol: "https",
+        hostname: "apisitem.ecommcube.com",
+      },
     ],
   },
   reactStrictMode: true,

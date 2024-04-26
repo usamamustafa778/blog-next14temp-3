@@ -3,26 +3,7 @@ import FullContainer from "../common/FullContainer";
 import Container from "../common/Container";
 import Image from "next/image";
 
-const blogs = [
-  {
-    title: "Mountain Snow Isn’t Holding Me Back This Time",
-    image:
-      "https://cheerup2.theme-sphere.com/bold/wp-content/uploads/sites/8/2016/05/anthony-delanoix-226168-1-1536x1024.jpg",
-  },
-  {
-    title: " A Serene Place For Deep Thinkers",
-    image:
-      "https://cheerup2.theme-sphere.com/bold/wp-content/uploads/sites/8/2016/05/MKF_5387-2048x1367.jpg",
-  },
-  ,
-  {
-    title: "My Very Minimal Interior Design Ideas",
-    image:
-      "https://cheerup2.theme-sphere.com/bold/wp-content/uploads/sites/8/2016/05/interiejer_12-2048x1365.jpg",
-  },
-];
-
-export default function MostPopular() {
+export default function MostPopular({ blogs }) {
   return (
     <FullContainer className="py-16 text-center">
       <Container className="border p-7">
@@ -30,8 +11,12 @@ export default function MostPopular() {
           Most Popular
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mt-11 mb-3">
-          {blogs.map((item, index) => (
-            <BlogCard key={index} title={item.title} image={item.image} />
+          {blogs?.slice(0, 3)?.map((item, index) => (
+            <BlogCard
+              key={index}
+              title={item.title}
+              image={`${process.env.NEXT_PUBLIC_SITE_MANAGER}/images/industry_template_images/${process.env.NEXT_PUBLIC_TEMPLATE_ID}/${item.image}`}
+            />
           ))}
         </div>
       </Container>
